@@ -44,6 +44,11 @@ No Normalization            |  Batch-Instance Normalization normalization
 :-------------------------:|:-------------------------:
 ![img](https://lh5.googleusercontent.com/VSiC9ONIpHZCW1E91nf92QbwdA4XV4PHDLNCWy4U74JEGjlg6CbQYA3GT-ZZiOzFS8aIuU91NjO288aGqG9Ca4VoU2ibsgjTqCvIL6K3z9TRHGHsRkssa752mp-hUuH7zwboN27u) |  ![img](https://lh6.googleusercontent.com/sIpydqM5F_1owAH7c_d_vC_W5BmlR0mzW8IBw93PC9bNwCELnojq6fJyy5XovA1fHvITqqVCQ1tVbjFiTCcJH5uhPF0wzD6V1Y8ekVUWxUVrleSi6zoM56yJcBreYRMz5Osm3JO0)
 
+## Some Results
+
+<img width="800" alt="Screenshot 2021-05-27 at 11 28 30 PM" src="https://user-images.githubusercontent.com/50492433/119874604-6ac5e400-bf43-11eb-925e-d5eca42cd2d6.png">
+
+
 ### References
 [1]: Jimmy Lei Ba, Jamie Ryan Kiros, and Geoffrey E. Hinton. Layer Normalization.
 2016. URL http://arxiv.org/abs/1607.06450.
