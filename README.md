@@ -14,11 +14,11 @@ here ***norm_type*** is one of torch_bn, bn, in, bin, ln, gn, nn which represent
 - ***n*** sets the number of layers. Total layers of the model will be 6n+2.
 - ***num_epochs*** sets the number of epochs for training.
 - ***output_file*** is the path to save the trained model.
-- ***data_dir*** is for giving the directory of the data as input. Please change the input format, and the CIFAR10 class in train_cifar.py script as per your requirement.
+- ***data_dir*** is for giving the directory where data will be downloaded
 
 ### Testing
 ```bash
-# python test_cifar.py --model_file ./pretrained_models/part_1.1.pth --normalization <norm_type> --n 2 --test_data_file ./sample_test_data/cifar_test.csv --output_file ./saving_results/1.1_test_out.csv
+python test_cifar.py --model_file ./pretrained_models/part_1.1.pth --normalization <norm_type> --n 2 --test_data_file ./sample_test_data/cifar_test.csv --output_file ./saving_results/1.1_test_out.csv
 ```
 - ***model_file*** is the path to path to the saved model which we get from training.
 - ***test_data_file*** is for giving the test images.
