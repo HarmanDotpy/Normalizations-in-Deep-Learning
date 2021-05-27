@@ -4,6 +4,29 @@ We do experimental work to report the impact of different normalization schemes 
 
 The detailed report can be found [here](https://github.com/HarmanDotpy/Normalizations-in-Deep-Learning/blob/main/Normalizations_report.pdf). 
 
+## For reproducing the experiments
+### Training
+```bash
+python train_cifar.py --normalization <norm_type> --data_dir ./dataset/cifar-10-batches-py --output_file ./saving_results/1.1.pth --n 2 --num_epochs 2
+```
+here ***norm_type*** is one of torch_bn, bn, in, bin, ln, gn, nn which represent different normalization schemes. torch_bn means inbuilt batch norm of pytorch, bn, in, bin, ln, gn, nn mean batch norm, instance norm, batch-instance norm, layer norm, group norm, and no normalization respectively.
+
+- ***n*** sets the number of layers. Total layers of the model will be 6n+2.
+- ***num_epochs*** sets the number of epochs for training.
+- ***output_file*** is the path to save the trained model.
+- ***data_dir*** is for giving the directory of the data as input. Please change the input format, and the CIFAR10 class in train_cifar.py script as per your requirement.
+
+### Testing
+```bash
+# python test_cifar.py --model_file ./pretrained_models/part_1.1.pth --normalization <norm_type> --n 2 --test_data_file ./sample_test_data/cifar_test.csv --output_file ./saving_results/1.1_test_out.csv
+```
+- ***model_file*** is the path to path to the saved model which we get from training.
+- ***test_data_file*** is for giving the test images.
+- ***output_file*** is the file (csv) in which the predictions are written to.
+rest all as explained in training
+
+
+
 ## ResNet and various Normalization Schemes
 
 We use ResNet model [[He et al., 2016](https://arxiv.org/abs/1512.03385)] to solve image classification task. Normalization techniques (applied just before activation function) - Batch Norm, Instance Norm, Batch-Instance Norm, Layer Norm, and Group Norm are compared. 
@@ -21,7 +44,7 @@ No Normalization            |  Batch-Instance Normalization normalization
 :-------------------------:|:-------------------------:
 ![img](https://lh5.googleusercontent.com/VSiC9ONIpHZCW1E91nf92QbwdA4XV4PHDLNCWy4U74JEGjlg6CbQYA3GT-ZZiOzFS8aIuU91NjO288aGqG9Ca4VoU2ibsgjTqCvIL6K3z9TRHGHsRkssa752mp-hUuH7zwboN27u) |  ![img](https://lh6.googleusercontent.com/sIpydqM5F_1owAH7c_d_vC_W5BmlR0mzW8IBw93PC9bNwCELnojq6fJyy5XovA1fHvITqqVCQ1tVbjFiTCcJH5uhPF0wzD6V1Y8ekVUWxUVrleSi6zoM56yJcBreYRMz5Osm3JO0)
 
-# References
+### References
 [1]: Jimmy Lei Ba, Jamie Ryan Kiros, and Geoffrey E. Hinton. Layer Normalization.
 2016. URL http://arxiv.org/abs/1607.06450.
 
@@ -47,18 +70,4 @@ http://arxiv.org/abs/1607.08022.
 
 [6]: Yuxin Wu and Kaiming He. Group Normalization. International Journal of
 Computer Vision, 128(3):742–755, 2020.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
